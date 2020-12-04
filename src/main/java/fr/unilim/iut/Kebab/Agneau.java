@@ -1,5 +1,5 @@
 package fr.unilim.iut.Kebab;
 
-public class Agneau {
+public class Agneau extends Ingredients{
 
 }

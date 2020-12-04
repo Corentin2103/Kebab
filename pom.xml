@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>fr.unilim.iut</groupId>
-	<artifactId>gildedrose</artifactId>
+	<artifactId>Kebab</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>gildedrose</name>
+	<name>Kebab</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>

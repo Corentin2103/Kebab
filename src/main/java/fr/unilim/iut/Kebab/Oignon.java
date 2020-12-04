@@ -1,5 +1,5 @@
 package fr.unilim.iut.Kebab;
 
-public class Oignon {
+public class Oignon extends Ingredients{
 
 }

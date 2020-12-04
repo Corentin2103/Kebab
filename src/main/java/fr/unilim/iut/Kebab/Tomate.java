@@ -1,5 +1,5 @@
 package fr.unilim.iut.Kebab;
 
-public class Tomate {
+public class Tomate extends Ingredients{
 
 }

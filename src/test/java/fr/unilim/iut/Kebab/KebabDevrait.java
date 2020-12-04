@@ -3,6 +3,8 @@ package fr.unilim.iut.Kebab;
 import org.junit.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.*;
+
+
 public class KebabDevrait {
 
 	
@@ -18,7 +20,7 @@ public class KebabDevrait {
 				.avec(new Sauce())
 				.preparerLeKebab();
 		
-		assertThat(kebabAgneau.listerLesIngredients()).containsExactly(
+		assertThat(kebabAgneau.listeLesIngredients()).containsExactly(
 				new Salade(),new Tomate(),new Oignon(),new Agneau(),new Pain(),new Sauce());
 	}
 }
