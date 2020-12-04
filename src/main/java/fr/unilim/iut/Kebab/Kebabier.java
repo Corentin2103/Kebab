@@ -19,4 +19,9 @@ public class Kebabier {
     public Kebab preparerLeKebab() {
         return new Kebab(ingredients);
     }
+
+	public static Kebabier unKebab() {
+		
+		return null;
+	}
 }
