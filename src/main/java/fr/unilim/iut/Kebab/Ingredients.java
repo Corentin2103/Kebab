@@ -6,7 +6,7 @@ public abstract class Ingredients {
     public int hashCode(){
         return 1;
     }
-
+    abstract void accepter(VisiteurDeRegime v);
     @Override
     public boolean equals(Object obj){
         if (this == obj)

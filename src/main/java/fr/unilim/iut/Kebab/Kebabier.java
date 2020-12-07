@@ -1,27 +1,24 @@
 package fr.unilim.iut.Kebab;
 
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class Kebabier {
 
-    private List<Ingredients> ingredients;
+	private ArrayList<Ingredients> ingredientArrayList = new ArrayList<>();
 
-    public Kebabier(){
-        this.ingredients=new ArrayList();
+    
+    public static Kebabier unKebab() {
+        return new Kebabier();
     }
-
     public Kebabier avec(Ingredients ingredient) {
-        ingredients.add(ingredient);
+        this.ingredientArrayList.add(ingredient);
         return this;
     }
 
-    public Kebab preparerLeKebab() {
-        return new Kebab(ingredients);
+    public Kebab prepareKebab() {
+        return new Kebab(this.ingredientArrayList);
     }
 
-	public static Kebabier unKebab() {
-		
-		return null;
-	}
+	
 }

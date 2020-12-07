@@ -2,9 +2,8 @@ package fr.unilim.iut.Kebab;
 
 import org.junit.Before;
 import org.junit.Test;
+import static fr.unilim.iut.Kebab.Kebabier.unKebab;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.*;
-
 
 public class KebabDevrait {
 
@@ -25,56 +24,70 @@ public class KebabDevrait {
 	
 	@Before
 	public void preparerLesKekabs() {
-		kebabAgneau = Kebabier.unKebab()
+		kebabAgneau = unKebab()
 		 .avec(SALADE)
 		 .avec(TOMATE)
 		 .avec(OIGNON)
 		 .avec(AGNEAU)
 		 .avec(PAIN)
 		 .avec(SAUCE)
-		 .preparerLeKebab();
+		 .prepareKebab();
 	
-		kebabVegetarien = new Kebabier()
+		kebabVegetarien = unKebab()
 				 .avec(SALADE)
 				 .avec(TOMATE)
 				 .avec(OIGNON)
 				 .avec(PAIN)
 				 .avec(SAUCE)
-				 .preparerLeKebab();
+				 .prepareKebab();
 		
-		kebabCrevette = new Kebabier()
+		kebabCrevette = unKebab()
 				 .avec(CREVETTE)
 				 .avec(TOMATE)
 				 .avec(OIGNON)
 				 .avec(FROMAGE)
 				 .avec(PAIN)
 				 .avec(SAUCE)
-				 .preparerLeKebab();
-		kebabThon = new Kebabier()
+				 .prepareKebab();
+		kebabThon = unKebab()
 				 .avec(THON)
 				 .avec(FROMAGE)
 				 .avec(OIGNON)
 				 .avec(PAIN)
 				 .avec(SAUCE)
-				 .preparerLeKebab();
+				 .prepareKebab();
 	 } 
 	@Test
 	public void bien_contenir_tous_les_ingredients_ajoutes_pendant_la_preparation() {
 		
 		
 		
-		assertThat(kebabAgneau.listeLesIngredients()).containsExactly(
+		assertThat(kebabAgneau.listerLesIngrédients()).containsExactly(
 				SALADE,TOMATE,OIGNON,AGNEAU,PAIN,SAUCE);
-		assertThat(kebabVegetarien.listeLesIngredients()).containsExactly(
+		assertThat(kebabVegetarien.listerLesIngrédients()).containsExactly(
 				SALADE,TOMATE,OIGNON,PAIN,SAUCE);
-		assertThat(kebabThon.listeLesIngredients()).containsExactly(
+		assertThat(kebabThon.listerLesIngrédients()).containsExactly(
 				THON,FROMAGE,OIGNON,PAIN,SAUCE);
-		assertThat(kebabCrevette.listeLesIngredients()).containsExactly(
+		assertThat(kebabCrevette.listerLesIngrédients()).containsExactly(
 				CREVETTE,TOMATE,OIGNON,FROMAGE,PAIN,SAUCE);
 	}
-	@Test
-	public void verifier_que_kebab_avec_agneau_n_est_pas_vegetarien() {
-		assertThat(kebabAgneau.estVegetarien()).isFalse();
-	}
+	
+	 @Test
+	    public void ne_pas_etre_vegetarien_avec_de_l_agneau() {
+		 assertThat(kebabAgneau.estVegetarien()).isFalse();
+	    }
+	    @Test
+	    public void ne_pas_etre_vegetarien_avec_de_la_crevette() {
+	    	assertThat(kebabCrevette.estVegetarien()).isFalse();
+	    }
+	    @Test
+	    public void ne_pas_etre_vegetarien_avec_du_thon() {
+	    	assertThat(kebabThon.estVegetarien()).isFalse();
+
+	    }
+	    @Test
+	    public void etre_vegetarien_kebabVegetarien() {
+	    	assertThat(kebabVegetarien.estVegetarien()).isTrue();
+	    }
 	
 }
